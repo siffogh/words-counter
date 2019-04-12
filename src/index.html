@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>ReasonReact Examples</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    html {
+      font-size: 15px;
+    }
+
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body,
+    textarea,
+    input,
+    button {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    #root {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+    }
+  </style>
 </head>
+
 <body>
-  Component 1:
-  <div id="index1"></div>
-
-  Component 2:
-  <div id="index2"></div>
-
+  <div id="root"></div>
   <script src="Index.js"></script>
 </body>
+
 </html>

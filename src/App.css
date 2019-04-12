@@ -1,0 +1,35 @@
+.App {
+    margin-top: 40px;
+    width: 100vw;
+    max-width: 700px;
+    height: calc(100vh - 40px);
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(216, 220, 227);
+}
+
+.App .header {
+    background-color: rgb(247, 248, 250);
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(216, 220, 227);
+    width: 100%;
+    text-align: center;
+}
+
+.App .header h3 {
+    margin: 0;
+}
+
+.App textarea {
+    flex: 1;
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom: 1px solid rgb(216, 220, 227);
+    width: 100%;
+    font-size: 1rem;
+  }
