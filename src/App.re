@@ -14,8 +14,19 @@ let countWordsInString = text => {
 };
 
 module Times = {
-  [@bs.module "./times.svg"] [@react.component]
+  [@bs.module "./icons/times.svg"] [@react.component]
   external make: (~height: string) => React.element = "default";
+};
+
+module Copy = {
+  [@bs.module "./icons/copy.svg"] [@react.component]
+  external make: (~height: string) => React.element = "default";
+};
+
+module CopyClipboard = {
+  [@bs.module "react-copy-to-clipboard"] [@react.component]
+  external make: (~text: string, ~children: React.element) => React.element =
+    "CopyToClipboard";
 };
 
 [@react.component]
@@ -46,6 +57,14 @@ let make = () => {
         disabled={String.length(text) === 0}>
         <Times height="20px" />
       </Button>
+      <CopyClipboard text>
+        <Button
+          title="Copy text"
+          disabled={String.length(text) === 0}
+          category=Button.PRIMARY>
+          <Copy height="20px" />
+        </Button>
+      </CopyClipboard>
     </div>
   </div>;
 };
