@@ -16,11 +16,12 @@ let classNameOfCategory = category =>
 [@react.component]
 let make =
     (
-      ~onClick,
+      ~onClick=_ => (),
       ~title: string,
       ~children: ReasonReact.reactElement,
       ~disabled=false,
       ~category=SECONDARY,
+      ~type_="button",
     ) => {
   <button onClick className={category |> classNameOfCategory} title disabled>
     children

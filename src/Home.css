@@ -1,4 +1,4 @@
-.App {
+.Home {
     margin-top: 40px;
     width: 100vw;
     max-width: 700px;
@@ -10,27 +10,27 @@
     border: 1px solid rgb(216, 220, 227);
 }
 
-.App .header, .footer, textarea {
+.Home .header, .footer, textarea {
     width: 100%;
 }
 
-.App .header, .footer {
+.Home .header, .footer {
     background-color: rgb(247, 248, 250);
     padding: 10px 20px;
     display: flex;
     align-items: center;
 }
 
-.App .header {
+.Home .header {
     border-bottom: 1px solid rgb(216, 220, 227);
     justify-content: space-between;
 }
 
-.App .header h3 {
+.Home .header h3 {
     margin: 0;
 }
 
-.App textarea {
+.Home textarea {
     flex: 1;
     resize: none;
     border: none;
@@ -41,13 +41,12 @@
     font-size: 1rem;
   }
 
-  .App .footer {
+  .Home .footer {
     border-top: 1px solid rgb(216, 220, 227);    
     justify-content: flex-end;
   }
 
-  .App button.clear {
-    color: rgba(0, 0, 0, 0.87);
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
-    background-color: #e0e0e0;
+
+  .Home button:not(:first-child) {
+      margin-left: 15px;
   }
