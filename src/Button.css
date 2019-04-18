@@ -1,0 +1,24 @@
+
+  .Button {
+    padding: 6px 16px;
+    padding-top: 11px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 3px;
+  }
+
+  .Button.secondary {
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
+    background-color: #e0e0e0;
+  }
+
+  .Button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  .Button:disabled {
+    color: rgba(0, 0, 0, 0.26);
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.12);
+  }

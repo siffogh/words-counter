@@ -13,11 +13,18 @@ let countWordsInString = text => {
   };
 };
 
+module Times = {
+  [@bs.module "./times.svg"] [@react.component]
+  external make: (~height: string) => React.element = "default";
+};
+
 [@react.component]
 let make = () => {
   let (text, setText) = React.useState(() => "");
 
   let handleTextChange = e => ReactEvent.Form.target(e)##value |> setText;
+
+  let handleClearClick = _ => setText(_ => "");
 
   let wordsCountText =
     (text |> countWordsInString |> string_of_int) ++ " words";
@@ -32,5 +39,13 @@ let make = () => {
       value=text
       onChange=handleTextChange
     />
+    <div className="footer">
+      <Button
+        title="Clear text"
+        onClick=handleClearClick
+        disabled={String.length(text) === 0}>
+        <Times height="20px" />
+      </Button>
+    </div>
   </div>;
 };
