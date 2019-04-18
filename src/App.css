@@ -16,6 +16,8 @@
     border-bottom: 1px solid rgb(216, 220, 227);
     width: 100%;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 .App .header h3 {
