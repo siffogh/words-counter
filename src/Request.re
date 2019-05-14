@@ -1,5 +1,11 @@
 exception PostError(string);
 
+[@decco]
+type error = {message: string};
+
+[@decco]
+type response = {error: option(error)};
+
 let post = (url, payload) => {
   let stringifiedPayload = payload |> Js.Json.object_ |> Js.Json.stringify;
 
@@ -15,27 +21,10 @@ let post = (url, payload) => {
     )
     |> then_(Fetch.Response.json)
     |> then_(response =>
-         switch (Js.Json.decodeObject(response)) {
-         | Some(decodedRes) =>
-           switch (Js.Dict.get(decodedRes, "error")) {
-           | Some(error) =>
-             switch (Js.Json.decodeObject(error)) {
-             | Some(decodedErr) =>
-               switch (Js.Dict.get(decodedErr, "message")) {
-               | Some(errorMessage) =>
-                 switch (Js.Json.decodeString(errorMessage)) {
-                 | Some(decodedErrorMessage) =>
-                   reject(PostError(decodedErrorMessage))
-                 | None => reject(PostError("POST_ERROR"))
-                 }
-               | None => resolve(decodedRes)
-               }
-             | None => resolve(decodedRes)
-             }
-
-           | None => resolve(decodedRes)
-           }
-         | None => resolve(Js.Dict.empty())
+         switch (response_decode(response)) {
+         | Belt.Result.Ok({error: Some({message})}) =>
+           reject(PostError(message))
+         | response => resolve(response)
          }
        )
   );

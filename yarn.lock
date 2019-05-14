@@ -684,6 +684,13 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@ryb73/decco@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@ryb73/decco/-/decco-0.0.12.tgz#7142342286a7d2d5581add84b7c31baf67b10220"
+  integrity sha512-I9Fo8JTq4eSfsaz987ewaGpy6SDGdiDF5HepPcLLtV1D46TK3jupr0TruS5ut39BqRS8Sqx38XdbpzN5x3pdnQ==
+  dependencies:
+    bs-platform "^5.0.3"
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
@@ -1346,10 +1353,10 @@ bs-fetch@^0.3.1:
   resolved "https://registry.yarnpkg.com/bs-fetch/-/bs-fetch-0.3.1.tgz#9c7d074b27e6bb2b9f2ec985964f32bcac49f79e"
   integrity sha512-MxwnuuXPldXnoCtlpeN5JNbbmb1tVgsqpLfVunvuMLAIQNyP0TqoImHiQRTz38PBSN8/iX+2yVlm+PFJfnHHiA==
 
-bs-platform@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-5.0.2.tgz#f10380a6f9accba0e150015ede343bae15db699b"
-  integrity sha512-lj0uCwhu3tJdUOUp1pX/MG6ar19wbK5kKvs9FMzg0RqloKhtoZ0CgE2CFxNY+i01IhblJeEADGjucvXeO5TgdQ==
+bs-platform@^5.0.3, bs-platform@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-5.0.4.tgz#d406ef43c12d1b19d8546884d8b5b4e0fb709372"
+  integrity sha512-rXM+ztN8wYXQ4ojfFGylvPOf8GRLOvM94QJsMMV9VpsLChKCjesWMNybTZvpoyNsESu2nC5q+C9soG+BPhuUFQ==
 
 buffer-from@^1.0.0:
   version "1.1.1"
