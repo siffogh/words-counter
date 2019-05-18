@@ -1,34 +1,5 @@
 [%bs.raw {|require('./App.css')|}];
 
-let countWordsInString = text => {
-  let spacesRegex = Js.Re.fromString("\s+");
-
-  switch (text) {
-  | "" => 0
-  | noneEmptyText =>
-    noneEmptyText
-    |> Js.String.trim
-    |> Js.String.splitByRe(spacesRegex)
-    |> Js.Array.length
-  };
-};
-
-module Times = {
-  [@bs.module "./icons/times.svg"] [@react.component]
-  external make: (~height: string) => React.element = "default";
-};
-
-module Copy = {
-  [@bs.module "./icons/copy.svg"] [@react.component]
-  external make: (~height: string) => React.element = "default";
-};
-
-module CopyClipboard = {
-  [@bs.module "react-copy-to-clipboard"] [@react.component]
-  external make: (~text: string, ~children: React.element) => React.element =
-    "CopyToClipboard";
-};
-
 [@react.component]
 let make = () => {
   let (text, setText) = React.useState(() => "");
@@ -38,7 +9,7 @@ let make = () => {
   let handleClearClick = _ => setText(_ => "");
 
   let wordsCountText =
-    (text |> countWordsInString |> string_of_int) ++ " words";
+    (text |> Utils.countWordsInString |> string_of_int) ++ " words";
 
   <div className="App">
     <div className="header">
