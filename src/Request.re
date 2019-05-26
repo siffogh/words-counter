@@ -1,10 +1,21 @@
 exception PostError(string);
 
-[@decco]
 type error = {message: string};
+type response = {
+  error: option(error),
+  idToken: string,
+};
 
-[@decco]
-type response = {error: option(error)};
+module Decode = {
+  let error = json =>
+    Json.Decode.{message: json |> field("message", string)};
+
+  let response = json =>
+    Json.Decode.{
+      error: json |> field("error", optional(error)),
+      idToken: json |> field("idToken", string),
+    };
+};
 
 let post = (url, payload) => {
   let stringifiedPayload = payload |> Js.Json.object_ |> Js.Json.stringify;
@@ -20,12 +31,12 @@ let post = (url, payload) => {
       ),
     )
     |> then_(Fetch.Response.json)
-    |> then_(response =>
-         switch (response_decode(response)) {
-         | Belt.Result.Ok({error: Some({message})}) =>
-           reject(PostError(message))
-         | response => resolve(response)
-         }
-       )
+    |> then_(json => {
+         let response = Decode.response(json);
+         switch (response.error) {
+         | Some(err) => reject(PostError(err.message))
+         | None => resolve(response)
+         };
+       })
   );
 };

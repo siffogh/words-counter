@@ -16,7 +16,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@ryb73/decco": "^0.0.12",
+    "@glennsl/bs-json": "^3.0.0",
     "@svgr/webpack": "^4.2.0",
     "bs-fetch": "^0.3.1",
     "react": "^16.8.1",

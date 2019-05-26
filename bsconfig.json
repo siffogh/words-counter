@@ -18,10 +18,7 @@
   "bs-dependencies": [
     "reason-react",
     "bs-fetch",
-    "@ryb73/decco"
-  ],
-  "ppx-flags": [
-    "ppx_decco"
+    "@glennsl/bs-json"
   ],
   "refmt": 3
 }
